@@ -1,0 +1,13 @@
+[target.i686-neutron]
+rustflags = [
+  "-C", "link-arg=-Tlink.x",
+]
+[target.i486-neutron]
+rustflags = [
+  "-C", "link-arg=-Tlink.x",
+]
+runner = "neutron-testbench"
+
+[build]
+target = "i486-neutron"
+

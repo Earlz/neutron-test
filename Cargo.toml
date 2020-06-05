@@ -1,0 +1,38 @@
+[package]
+name = "neutron-test"
+version = "0.1.0"
+authors = ["Jordan Earls <earlz@earlz.net>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+neutron-star-rt = { path = "../qtum-neutron-rt" }
+#neutron-star-rt = { git = "https://github.com/qtumproject/neutron-star-rt"}
+
+[dependencies.num-traits]
+version = "0.2"
+default-features = false
+
+[dependencies.neutron-star-constants]
+#path = "../../neutronstar-constants"
+git = "https://github.com/qtumproject/neutron-star-constants"
+default-features = false
+
+[dependencies.neutron-star]
+path = "../neutron-star"
+default-features = false
+
+[profile.dev]
+panic = "abort"
+
+[profile.test]
+panic = "abort"
+
+[profile.release]
+panic = "abort"
+opt-level = 'z' 
+lto = true
+codegen-units = 1
+incremental = false
+
